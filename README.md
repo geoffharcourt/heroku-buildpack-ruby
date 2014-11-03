@@ -1,6 +1,17 @@
 # Heroku Buildpack for Ruby
 
 This is a [Heroku Buildpack](http://devcenter.heroku.com/articles/buildpacks) for Ruby, Rack, and Rails apps. It uses [Bundler](http://gembundler.com) for dependency management.
+=======
+*Note* This fork only exists because Tim Pope's existing fork of the buildpack
+stopped working when Ruby 2.1.3 became available on the Heroku platform. Changes
+from his fork only exist to make Rubies later than 2.1.2 work with the
+buildpack. Tim's fork doesn't accept issues, so this is meant to be a
+temporary location for updates pending an update to his fork.
+
+This is an update to @tpope's fork of the [official Heroku Ruby
+buildpack](https://github.com/heroku/heroku-buildpack-ruby).  Use it when
+creating a new app:
+>>>>>>> 5af1bf8... Update README to explain fork.
 
 ## Usage
 
@@ -67,9 +78,6 @@ A [rails_log_stdout](http://github.com/ddollar/rails_log_stdout) is installed by
 
 #### Auto Injecting Plugins
 
-<<<<<<< HEAD
-Any vendored plugin can be stopped from being installed by creating the directory it's installed to in the slug. For instance, to prevent rails_log_stdout plugin from being injected, add `vendor/plugins/rails_log_stdout/.gitkeep` to your git repo.
-=======
 **Broken and disabled pending further investigation.**
 
 This takes the upcoming and previously deployed commit SHAs and makes them
