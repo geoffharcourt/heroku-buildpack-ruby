@@ -67,7 +67,16 @@ A [rails_log_stdout](http://github.com/ddollar/rails_log_stdout) is installed by
 
 #### Auto Injecting Plugins
 
+<<<<<<< HEAD
 Any vendored plugin can be stopped from being installed by creating the directory it's installed to in the slug. For instance, to prevent rails_log_stdout plugin from being injected, add `vendor/plugins/rails_log_stdout/.gitkeep` to your git repo.
+=======
+**Broken and disabled pending further investigation.**
+
+This takes the upcoming and previously deployed commit SHAs and makes them
+available as `$REVISION` and `$ORIGINAL_REVISION` for the duration of the
+compile.  They are also written to `HEAD` and `ORIG_HEAD` in the root of the
+application for easy access after the deploy is complete.
+>>>>>>> 2fe6ae2... Disable broken commit recording
 
 ### Rails 3
 

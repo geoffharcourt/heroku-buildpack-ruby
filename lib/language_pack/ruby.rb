@@ -102,22 +102,6 @@ class LanguagePack::Ruby < LanguagePack::Base
 
 private
 
-  def commit_range
-    @commit_range ||=
-      begin
-        pppid = File.read("/proc/#{Process.ppid}/status")[/PPid:\s*(\d+)/, 1]
-        cmdline = File.read("/proc/#{pppid}/cmdline").split("\0")
-        cmdline[2].split('=').last.split('..')
-      end
-  end
-
-  def record_heads
-    ENV['ORIGINAL_REVISION'] = commit_range.first
-    ENV['REVISION']          = commit_range.last
-    File.open('ORIG_HEAD', 'w') { |f| f.puts(commit_range.first) }
-    File.open('HEAD', 'w')      { |f| f.puts(commit_range.last)  }
-  end
-
   # the base PATH environment variable to be used
   # @return [String] the resulting PATH
   def default_path
